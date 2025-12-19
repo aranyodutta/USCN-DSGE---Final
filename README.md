@@ -1,17 +1,19 @@
-# US–China DSGE Model  
-**A Two-Country New Keynesian DSGE Framework with Dollarization**
+# US–China DSGE Model
+## A Two-Country New Keynesian DSGE Framework with Dollarization
 
-This repository contains a two-country Dynamic Stochastic General Equilibrium (DSGE) model of the United States and China designed to study **dollar dominance**, **financial dollarization**, and **de-dollarization dynamics**. The model is implemented in **Dynare/MATLAB** and produces impulse response functions (IRFs), simulated moments, and supporting documentation for academic research.
+This repository contains a two-country Dynamic Stochastic General Equilibrium (DSGE) model (United States and China) implemented in Dynare/MATLAB. It is designed to study international monetary spillovers and the macroeconomic implications of financial dollarization and de-dollarization. The code produces impulse response functions (IRFs), simulated moments, and supporting documentation.
+
+**Literature note.** The model’s open-economy two-country New Keynesian core follows standard frameworks in the literature and is **adapted in part from Jang and Okano (2013)**, with additional extensions to study dollarization and policy spillovers (see **References**). 
 
 ---
 
 ## 1. Research Motivation
+US dollar dominance in global finance can shape monetary policy transmission, exchange rate dynamics, and cross-border macroeconomic spillovers. In economies with meaningful foreign-currency exposure, partial financial dollarization can constrain monetary autonomy and alter domestic policy effectiveness.
 
-The dominance of the US dollar in global financial markets shapes monetary policy transmission, exchange rate dynamics, and macroeconomic spillovers. Emerging economies with partial financial dollarization—such as China—face constraints on monetary autonomy that alter the effectiveness of domestic policy.
+This project develops and extends a two-country New Keynesian DSGE framework to analyze:
 
-This project develops a structural two-country New Keynesian DSGE model to analyze:
 - How US monetary policy shocks transmit internationally
-- How financial dollarization affects monetary policy effectiveness in China
+- How financial dollarization can affect monetary policy effectiveness in China
 - The macroeconomic consequences of de-dollarization
 - Cross-border spillovers in inflation, output, and interest rates
 
@@ -20,8 +22,8 @@ This project develops a structural two-country New Keynesian DSGE model to analy
 ## 2. Model Overview
 
 ### Economic Structure
-- **Home economy:** United States (advanced economy, issuer of the global reserve currency)
-- **Foreign economy:** China (large emerging economy with partial financial dollarization)
+- **Home economy:** United States (advanced economy; issuer of the dominant reserve currency)
+- **Foreign economy:** China (large open economy with partial financial dollarization)
 
 Each country features:
 - Representative households with CES consumption baskets
@@ -32,46 +34,42 @@ Each country features:
 ### Key Features
 - Open-economy trade linkages and terms-of-trade effects
 - Nominal exchange rate dynamics
-- Explicit dollarization channel in China’s monetary policy rule
+- A dollarization state in China that enters the monetary policy rule (dollarization / de-dollarization channel)
 - Spillover effects from US monetary policy to China
 
 ---
 
 ## 3. Shocks Analyzed
-
 The model focuses on two primary sources of uncertainty:
 
-1. **US Monetary Policy Shock**
-   - Contractionary or expansionary shocks to the Federal Reserve’s policy rate
-   - Transmission through interest rates, inflation, output, and the exchange rate
+1) **US Monetary Policy Shock**
+- Contractionary or expansionary shocks to the Federal Reserve’s policy rate
+- Transmission through interest rates, inflation, output, and the exchange rate
 
-2. **China Dollarization / De-dollarization Shock**
-   - Shocks to the degree of financial dollarization in China
-   - Effects on monetary policy transmission, inflation dynamics, and output
-   - Spillovers to the US economy
+2) **China Dollarization / De-dollarization Shock**
+- Shocks to the degree of financial dollarization in China (modeled as a disturbance to the dollarization state)
+- Effects on monetary policy transmission, inflation dynamics, and output
+- Spillovers back to the US economy
 
 Impulse response functions (IRFs) are the main tool for analyzing these dynamics.
 
 ---
 
 ## 4. Software Requirements
+To run the model and reproduce results, you need:
 
-To run the model and reproduce the results, you need:
-
-- **MATLAB**  
-  - Tested on R2023b (earlier versions may work)
-- **Dynare 5.x**  
-  - Must be installed and added to the MATLAB path
+- **MATLAB** (tested on R2023b; earlier versions may work)
+- **Dynare 5.x** (installed and added to the MATLAB path)
 
 ---
 
 ## 5. Quick Start Guide
-
-To generate all baseline results and figures:
+To generate baseline results and figures:
 
 1. Open MATLAB  
 2. Navigate to the project root directory  
 3. Run:
-   ```matlab
-   cd code/scripts
-   run_all.m
+
+```matlab
+cd code/scripts
+run_all.m
